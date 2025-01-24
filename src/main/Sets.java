@@ -1,3 +1,5 @@
+package main;
+
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -6,7 +8,7 @@ import java.util.TreeSet;
 
 public class Sets {
 
-    public Set<String> construirHashSet(){
+    public Set<String> construirHashSet() {
         Set<String> miHashSet = new HashSet<>();
         miHashSet.add("Manzana");
         miHashSet.add("Pera");
@@ -18,7 +20,7 @@ public class Sets {
 
     }
 
-    public Set<String> construirLinkedHashSet(){
+    public Set<String> construirLinkedHashSet() {
         Set<String> miLinkedHashSet = new LinkedHashSet<>();
         miLinkedHashSet.add("Manzana");
         miLinkedHashSet.add("Pera");
@@ -30,7 +32,7 @@ public class Sets {
 
     }
 
-    public Set<String> construirTreeSet(){
+    public Set<String> construirTreeSet() {
         Set<String> miTreeSet = new TreeSet<>();
         miTreeSet.add("Manzana");
         miTreeSet.add("Pera");
