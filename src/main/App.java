@@ -19,7 +19,7 @@ public class App {
     public static void runHashSet() {
         Sets sets = new Sets();
         Set<String> ejemploHashSet = sets.construirHashSet();
-        System.out.println("-------HashSet-------");
+        System.out.println("\n-------HashSet-------");
         System.out.println("Elementos del HashSet (no se garantiza el orden)");
         for (String elemento : ejemploHashSet) {
             System.out.println(elemento);
@@ -55,33 +55,49 @@ public class App {
             System.out.println(elemento2);
         }
     }
-
-    private Set<Contacto> agenda;
-
-    public App() {
-        this.agenda = new TreeSet<>(new ContactoComparador());
-    }
-
+    
     private static void runAgenda() {
-        
-        App app = new App();
+
+        /*
+        // Set<Contacto> agenda = new TreeSet<>(new ContactoComparator( x)); 
+
+        Contacto c1 = new Contacto("Pedro", "Lopez", "123456789");
+        Contacto c2 = new Contacto("Pedro", "Lopez", "123456789");
 
         System.out.println("-------AgendaComparador-------");
-        // Agregar contactos a la agenda
-        app.agenda.add(new Contacto("Alexander", "López ", "0107903526"));
-        app.agenda.add(new Contacto("Emily", "Brown", "01079035654"));
-        app.agenda.add(new Contacto("Alexander", "López ", "0107903526"));
-        app.agenda.add(new Contacto("Abel ", "López ", "0107903526"));
-        app.agenda.add(new Contacto("Emily", "Brown", "01079035654"));
-        app.agenda.add(new Contacto("Abel ", "López ", "0107903526"));
-        app.agenda.add(new Contacto("Abel ", "López ", "0107903526"));
-        app.agenda.add(new Contacto("Emily", "Brown", "01079035654"));
-        app.agenda.add(new Contacto("Abel ", "López ", "0107903526"));
+        System.out.println("Ejemplo con nombres repetidos");
 
-        // Mostrar la agenda
-        System.out.println("Agenda:");
-        for (Contacto contacto : app.agenda) {
-            System.out.println(contacto);
+        System.out.println(c1);
+        System.out.println(c2);
+
+        System.out.println("Referencia en memoria");
+        boolean comparacionReferencia = c1 == c2;
+        System.out.println(comparacionReferencia);
+        System.out.println("c1: " + c1 + " == c2:" + c2 + " = " + comparacionReferencia + "\n");
+
+        System.out.println("comparacionEquals");
+        System.out.println(c1.equals(c2));
+        boolean comparacionEquals = c1 == c2;
+        System.out.println(comparacionEquals);
+        System.out.println("c1: " + c1 +" == c2: " + c2 + " = " + comparacionEquals + "\n");
+
+        System.out.println("comparacionHashCode");
+        boolean comparacionHashCode = c1.hashCode() == c2.hashCode();
+        System.out.println(comparacionHashCode);
+        System.out.println("c1: " + c1.hashCode() + " == c2: " + c2.hashCode() + " = " + comparacionHashCode);
+        */
+
+        // Ahora, usamos un TreeSet para almacenar y ordenar Contactos
+        Set<Contacto> agenda = new TreeSet<>(new ContactoComparador());
+        System.out.println("-------AgendaComparador-------");
+        agenda.add(new Contacto("Pedro", "Lopez", "2222222222"));
+        agenda.add(new Contacto("Luis", "Perez", "1111111111"));
+        agenda.add(new Contacto("Ana", "Perez", "9876543210"));
+        agenda.add(new Contacto("Pedro", "Lopez", "1234567890"));
+
+        for (Contacto c : agenda) {
+            System.out.println(c);
         }
     }
 }
+
