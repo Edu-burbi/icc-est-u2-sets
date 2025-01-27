@@ -68,9 +68,15 @@ public class App {
 
         System.out.println("-------AgendaComparador-------");
         // Agregar contactos a la agenda
-        app.agenda.add(new Contacto("Alexander", "Smith", "123456789"));
-        app.agenda.add(new Contacto("Emily", "Brown", "987654321"));
-        app.agenda.add(new Contacto("Alexander", "Smith", "123456789"));
+        app.agenda.add(new Contacto("Alexander", "López ", "0107903526"));
+        app.agenda.add(new Contacto("Emily", "Brown", "01079035654"));
+        app.agenda.add(new Contacto("Alexander", "López ", "0107903526"));
+        app.agenda.add(new Contacto("Abel ", "López ", "0107903526"));
+        app.agenda.add(new Contacto("Emily", "Brown", "01079035654"));
+        app.agenda.add(new Contacto("Abel ", "López ", "0107903526"));
+        app.agenda.add(new Contacto("Abel ", "López ", "0107903526"));
+        app.agenda.add(new Contacto("Emily", "Brown", "01079035654"));
+        app.agenda.add(new Contacto("Abel ", "López ", "0107903526"));
 
         // Mostrar la agenda
         System.out.println("Agenda:");
