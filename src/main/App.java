@@ -1,6 +1,9 @@
 package main;
 
 import java.util.Set;
+import java.util.TreeSet;
+import models.Contacto;
+import utils.ContactoComparador;
 
 public class App {
 
@@ -10,6 +13,7 @@ public class App {
         runLinkedHashSet();
         runTreeSet();
         runTreeSetConComparador();
+        runAgenda();
     }
 
     public static void runHashSet() {
@@ -49,6 +53,29 @@ public class App {
         System.out.println("Elementos del TreeSetConComparador (Ordenados por longitud y luego en Orden alfabetico)");
         for (String elemento2 : ejemploTreeSetConComparador) {
             System.out.println(elemento2);
+        }
+    }
+
+    private Set<Contacto> agenda;
+
+    public App() {
+        this.agenda = new TreeSet<>(new ContactoComparador());
+    }
+
+    private static void runAgenda() {
+        
+        App app = new App();
+
+        System.out.println("-------AgendaComparador-------");
+        // Agregar contactos a la agenda
+        app.agenda.add(new Contacto("Alexander", "Smith", "123456789"));
+        app.agenda.add(new Contacto("Emily", "Brown", "987654321"));
+        app.agenda.add(new Contacto("Alexander", "Smith", "123456789"));
+
+        // Mostrar la agenda
+        System.out.println("Agenda:");
+        for (Contacto contacto : app.agenda) {
+            System.out.println(contacto);
         }
     }
 }

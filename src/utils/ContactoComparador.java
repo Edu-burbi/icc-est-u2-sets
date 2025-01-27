@@ -1,35 +1,16 @@
 package utils;
 
 import java.util.Comparator;
-import java.util.Set;
-import java.util.TreeSet;
+import models.Contacto;
 
-public class ContactoComparador {
+public class ContactoComparador implements Comparator<Contacto> {
 
-    public Set<Contacto> construirContactoComparador() {
-        Comparator<Contacto> comparadorPorLongitud = new Comparator<Contacto>() {
-            @Override
-            public int compare(Contacto s1, Contacto s2) {
-                int resultado = Integer.compare(s1.length(), s2.length());
-                if (resultado == 0) {
-                    resultado = s1.compareTo(s2);
-                }
-                return resultado;
-            }
-        };
-
-        Set<Contacto> miTreeSetComparador = new TreeSet<>(comparadorPorLongitud);
-        miTreeSetComparador.add("Melon");
-        miTreeSetComparador.add("Pera");
-        miTreeSetComparador.add("Manzana");
-        miTreeSetComparador.add("Fresa");
-        miTreeSetComparador.add("Kiwi");
-        miTreeSetComparador.add("Melocoton");
-        miTreeSetComparador.add("Pera");
-
-        return miTreeSetComparador;
+    @Override
+    public int compare(Contacto c1, Contacto c2) {
+        int compareApellido = c1.getApellido().compareTo(c2.getApellido());
+        if (compareApellido != 0) {
+            return compareApellido;
+        }
+        return c1.getNombre().compareTo(c2.getNombre());
     }
 }
-
-
-
